@@ -13,3 +13,11 @@ test:
   pool: 5
   username: emc
   password: password1
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: emc_test
+  pool: 5
+  username: emc
+  password: password1
