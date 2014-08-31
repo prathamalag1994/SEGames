@@ -17,7 +17,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: emc_test
+  database: d7gjiab7s5gqp2
   pool: 5
-  username: emc
-  password: password1
+  username: tpcobdtzkseeob
+  password: 39oOuUFYY-rAEwa5rQS_uzKzLR
