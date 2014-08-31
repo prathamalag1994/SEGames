@@ -26,6 +26,7 @@ resources :offers
    get 'ses/home', to: 'welcome#index'
    get 'ses/offer', to: 'activities#new'
    get 'ses/myactivities', to: 'activities#index'
+   get 'ses/offer/new', to: 'offers#new'
 
 
    get 'activities/leader', to: 'welcome#leader'
