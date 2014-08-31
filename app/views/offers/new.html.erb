@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="starter-template.css" rel="stylesheet">
+
+    <script src="http://getbootstrap.com/assets/js/ie-emulation-modes-warning.js"></script>
+
+    <script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
+  </head>
+
+  <body>
+
+    
+<br><br><br>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation"><br>
+    <h4 style="vertical-align:bottom; color:white;">&nbsp;
+      <%= link_to 'Home', 'home'%>&nbsp;
+      <%= link_to 'My Activities', 'myactivities'%>&nbsp;
+      <%= link_to 'Leaderboards', 'leader'%>&nbsp;
+      <%= link_to 'Offers', 'offer'%>&nbsp;<br><br>
+    </h5>
+    
+    </div><br>
+
+    <div class="container">
+
+      <div class="starter-template"> 
+
+<h2> Add your offers here: </h2><br>
+
+
+<%= form_for :offer, url: offers_path do |f| %>  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_area :desc %>
+  </p>
+
+  <p>
+    <%= f.label :bu %><br>
+    <%= f.select :bu, [['Core'],['DPAD'],['ASD'],['ETPD'],['Isilon'],['EMSD'],['Global Alliances'],['Global Accounts'],['Flash'],['Other'],['Pivotal']], autocomplete: "off" %>  <br>
+  </p>
+
+  <p>
+    <%= f.label :points %><br>
+    <%= f.number_field :points %>
+  </p>
+ <p>
+    <%= f.label :password %><br>
+    <%= f.text_field :password %>
+  </p>
+ <%= f.hidden_field :active , :value => "true" %>
+  <p>
+  <%= f.label :activity %><br />
+  <%= f.collection_select :activity, Allact.all, :name, :name, :prompt => "Select an activity" %>
+</p><br>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+
+
+    </div>
+
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

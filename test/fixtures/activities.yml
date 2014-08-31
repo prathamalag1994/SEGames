@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  activity: MyText
+  desc: MyText
+  empid: 1
+
+two:
+  activity: MyText
+  desc: MyText
+  empid: 1

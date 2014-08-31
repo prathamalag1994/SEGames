@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="starter-template.css" rel="stylesheet">
+
+    <script src="http://getbootstrap.com/assets/js/ie-emulation-modes-warning.js"></script>
+
+    <script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
+  </head>
+
+  <body>
+
+    
+<br><br><br>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation"><br>
+    <h4 style="vertical-align:bottom; color:white;">&nbsp;
+      <%= link_to 'Home', 'home'%>&nbsp;
+      <%= link_to 'My Activities', 'myactivities'%>&nbsp;
+      <%= link_to 'Leaderboards', 'leader'%>&nbsp;
+      <%= link_to 'Offers', 'offer'%>&nbsp;<br><br>
+    </h5>
+    
+    </div><br>
+
+    <div class="container">
+
+      <div class="starter-template"> 
+
+
+
+<h2>Listing all activities:</h2><br>
+ 
+<table>
+  <tr>
+    <th>Date Completed&nbsp;&nbsp;&nbsp;</th>
+    <th>Title&nbsp;&nbsp;&nbsp;</th>
+    <th>Points&nbsp;&nbsp;&nbsp;</th>
+  </tr>
+ 
+  <% @activities.each do |activity| %>
+    <tr>
+      <td><%= activity.activity %>&nbsp;&nbsp;&nbsp;</td>
+      <td><%= activity.desc %>&nbsp;&nbsp;&nbsp;</td>
+      <td><%= activity.points %>&nbsp;&nbsp;&nbsp;</td>
+    </tr>
+  <% end %>
+</table><br><br>
+
+
+  
+
+    </div>
+
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="starter-template.css" rel="stylesheet">
+    
+    <link href="http://prathamalag.com/assets/csss.css" rel="stylesheet">
+
+    <script src="http://getbootstrap.com/assets/js/ie-emulation-modes-warning.js"></script>
+
+    <script src="http://prathamalag.com/assets/javascr.js"></script>
+
+    <script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
+  </head>
+
+  <body>
+
+    
+<br><br><br>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation"><br>
+    <h4 style="vertical-align:bottom; color:white;">&nbsp;
+      <%= link_to 'Home', 'home'%>&nbsp;
+      <%= link_to 'My Activities', 'myactivities'%>&nbsp;
+      <%= link_to 'Leaderboards', 'leader'%>&nbsp;
+      <%= link_to 'Offers', 'offer'%>&nbsp;<br><br>
+    </h5>
+    </h5>
+    
+    </div><br>
+
+    <div class="container">
+
+      <div class="starter-template"> 
+
+<!-- START -->
+
+<div id="containerr">
+    <div class="expandable-panel" id="cp-1">
+        <div class="expandable-panel-heading">
+            <h2>Overall Rankings: <span class="icon-close-open"></span></h2>
+         </div>
+        <div class="expandable-panel-content">
+           <table>                         <br>
+  <tr> 
+    <th>Rank&nbsp;&nbsp;&nbsp;</th>                         
+    <th>Name&nbsp;&nbsp;&nbsp;</th>
+    <th>Points</th>
+  </tr>
+<% @sel.each do |sel| %>     
+  <tr>
+    <td><%= sel.orank %>&nbsp;&nbsp;&nbsp;</td>  
+    <td><%= sel.name %>&nbsp;&nbsp;&nbsp;</td>  
+    <td><%= sel.points %></td>  
+  </tr>
+<% end %> </table><br>
+        </div>
+    </div>
+     
+    <div class="expandable-panel" id="cp-2">
+        <div class="expandable-panel-heading">
+            <h2>Bu Rankings:<span class="icon-close-open"></span></h2>
+         </div>
+        <div class="expandable-panel-content">
+            <table>                         <br>
+  <tr>     
+    <th>Rank&nbsp;&nbsp;&nbsp;</th>                       
+    <th>Name&nbsp;&nbsp;&nbsp;</th>
+    <th>Points</th>
+  </tr>
+<% @seb.each do |sel| %>     
+  <% if sel.bu == @se.bu%>
+  <tr>
+    <td><%= sel.burank %>&nbsp;&nbsp;&nbsp;</td> 
+    <td><%= sel.name %>&nbsp;&nbsp;&nbsp;</td>  
+    <td><%= sel.points %></td>  
+  </tr>
+<% end %>        <% end %>                      </table> <br>
+             
+        </div>
+  </div>
+     
+  <div class="expandable-panel" id="cp-3">
+     <div class="expandable-panel-heading">
+         <h2>Country Rankings:<span class="icon-close-open"></span></h2>
+     </div>
+     <div class="expandable-panel-content">
+         <table>                         <br>
+  <tr>           
+    <th>Rank&nbsp;&nbsp;&nbsp;</th>                 
+    <th>Name&nbsp;&nbsp;&nbsp;</th>
+    <th>Points</th>
+  </tr>
+<% @sec.each do |sel| %>     
+  <% if sel.country == @se.country%>
+  <tr>
+    <td><%= sel.crank %>&nbsp;&nbsp;&nbsp;</td> 
+    <td><%= sel.name %>&nbsp;&nbsp;&nbsp;</td>  
+    <td><%= sel.points %></td>  
+  </tr>
+<% end %>        <% end %>                      </table> <br>
+
+     </div>
+  </div> 
+
+
+
+  <div class="expandable-panel" id="cp-4">
+        <div class="expandable-panel-heading">
+            <h2>Geo Rankings:<span class="icon-close-open"></span></h2>
+         </div>
+        <div class="expandable-panel-content">
+            <table>                         <br>
+  <tr>        
+    <th>Rank&nbsp;&nbsp;&nbsp;</th>                    
+    <th>Name&nbsp;&nbsp;&nbsp;</th>
+    <th>Points</th>
+  </tr>
+<% @seg.each do |sel| %>     
+  <% if sel.geo == @se.geo%>
+  <tr>
+    <td><%= sel.grank %>&nbsp;&nbsp;&nbsp;</td> 
+    <td><%= sel.name %>&nbsp;&nbsp;&nbsp;</td>  
+    <td><%= sel.points %></td>  
+  </tr>
+<% end %>        <% end %>                      </table> <br>
+             
+        </div>
+  </div>
+
+</div>
+
+
+
+    </div>
+
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

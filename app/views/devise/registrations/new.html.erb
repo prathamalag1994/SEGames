@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="starter-template.css" rel="stylesheet">
+
+    <script src="http://getbootstrap.com/assets/js/ie-emulation-modes-warning.js"></script>
+
+    <script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
+  </head>
+
+  <body>
+
+    
+<br><br><br>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation"><br>
+    <h4 style="vertical-align:bottom; color:white;">&nbsp;
+       <%= link_to 'Home', 'home'%>&nbsp;
+      <%= link_to 'My Activities', 'myactivities'%>&nbsp;
+      <%= link_to 'Leaderboards', 'leader'%>&nbsp;
+      <%= link_to 'Offers', 'offer'%>&nbsp;<br><br>
+    </h5>
+    </h5>
+    
+    </div><br>
+
+    <div class="container">
+
+      <div class="starter-template"> 
+
+<!-- START -->
+        <h1>Sign Up!</h1>
+        <p class="lead">Verify your account through your email.</p>
+      </div>
+
+
+
+
+
+
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div><%= f.label :name %><br />
+  <%= f.text_field :name, autofocus: true %></div>
+
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email, autofocus: true %></div>
+
+  <div><%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "off" %></div>
+
+  <div><%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+
+    <div><%= f.label :empid %><br />
+    <%= f.text_field :empid, autocomplete: "off" %></div>
+
+        <div><%= f.label :managerempid %><br />
+    <%= f.text_field :managerempid, autocomplete: "off" %></div> <br>
+
+
+    <div><%= f.label :bu %><br />
+    <%= f.select :bu, [['Core'],['DPAD'],['ASD'],['ETPD'],['Isilon'],['EMSD'],['Global Alliances'],['Global Accounts'],['Flash'],['Other'],['Pivotal']], autocomplete: "off" %></div>  <br>
+
+
+    <div><%= f.label :country %><br />
+    <%= f.select :country, [['India'],['Bangladesh'],['Singapore'],['Indonesia'],['Malaysia'],['Phillipines'],['Thailand'],['Vietnam'],['Cambodia'],['Myanmar'],['Australia'],['New Zealand'],['China'],['Hong Kong'],['Taiwan'],['South Korea'],['Japan']], autocomplete: "off" %></div> <br />
+
+
+
+
+<br>
+  <div><%= f.submit "Sign up" %></div>
+<% end %><br>
+
+<%= render "devise/shared/links" %><br>
+   
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
