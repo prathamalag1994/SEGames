@@ -77,7 +77,7 @@ config.action_mailer.smtp_settings = {
   domain: "segamesapp.heroku.com",
   authentication: "plain",
   enable_starttls_auto: true,
-  user_name: "yoyopratham1994",
+  user_name: "yoyopratham1994@gmail.com",
   password: "fDakkudaddy1"
 }
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
