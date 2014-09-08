@@ -1,5 +1,5 @@
 <p>Welcome <%= @email %>!</p>
 
 <p>You can confirm your account email through the link below:</p>
-<p>Once you click this link, you will be automatically confirmed and redirected to sign in via your registration credentials.<p>
+<p>Once you click this link, you will be automatically confirmed and redirected to sign in via your registration credentials. <p>
 <p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
