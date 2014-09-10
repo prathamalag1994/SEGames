@@ -10,7 +10,11 @@ class RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     build_resource(sign_up_params)
-
+    if resource.admin == "EMC"
+      resource.admin="yes"
+    else
+      resource.admin=""
+    end
     if resource.country == "India"
         resource.geo = "India"
       end

@@ -68,6 +68,9 @@
         <div><%= f.label :managerempid %><br />
     <%= f.text_field :managerempid, autocomplete: "off" %></div> <br>
 
+    <div><%= f.label :admin %> (Leave this empty if you're not an admin)<br /> 
+    <%= f.text_field :admin, autocomplete: "off" %></div>
+
 
     <div><%= f.label :bu %><br />
     <%= f.select :bu, [['Core'],['DPAD'],['ASD'],['ETPD'],['Isilon'],['EMSD'],['Global Alliances'],['Global Accounts'],['Flash'],['Other'],['Pivotal']], autocomplete: "off" %></div>  <br>

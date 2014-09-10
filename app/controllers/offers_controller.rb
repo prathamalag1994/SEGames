@@ -6,7 +6,7 @@ def create
   @offer = Offers.new(offer_params)
   @offer.save
   if @offer.save
-  	if @offer.password != "EMC"
+  	if current_se.admin != "yes"
   		@offer.destroy
   	else
   		redirect_to @offer

@@ -41,6 +41,9 @@
       <div class="starter-template"> 
 
 <!-- START -->
+<% if @se.admin != "yes" %>
+
+
 
 <div id="containerr">
     <div class="expandable-panel" id="cp-1">
@@ -137,6 +140,117 @@
 
 </div>
 
+
+
+
+<% else %>
+
+
+
+
+
+<div id="containerr">
+    <div class="expandable-panel" id="cp-1">
+        <div class="expandable-panel-heading">
+            <h2>Overall Rankings: <span class="icon-close-open"></span></h2>
+         </div>
+        <div class="expandable-panel-content">
+           <table>                         <br>
+  <tr> 
+    <th>Rank&nbsp;&nbsp;&nbsp;</th>                         
+    <th>Name&nbsp;&nbsp;&nbsp;</th>
+    <th>Points</th>
+  </tr>
+<% @sel.each do |sel| %>     
+  <tr>
+    <td><%= sel.orank %>&nbsp;&nbsp;&nbsp;</td>  
+    <td><%= sel.name %>&nbsp;&nbsp;&nbsp;</td>  
+    <td><%= sel.points %></td>  
+  </tr>
+<% end %> </table><br>
+        </div>
+    </div>
+     
+    <div class="expandable-panel" id="cp-2">
+        <div class="expandable-panel-heading">
+            <h2>Bu Rankings:<span class="icon-close-open"></span></h2>
+         </div>
+        <div class="expandable-panel-content">
+            <table>                         <br>
+  <tr>     
+    <th>Rank&nbsp;&nbsp;&nbsp;</th>                       
+    <th>Name&nbsp;&nbsp;&nbsp;</th>
+    <th>Points</th>
+    <th>BU</th>
+  </tr>
+<% @seb.each do |sel| %>     
+  <tr>
+    <td><%= sel.burank %>&nbsp;&nbsp;&nbsp;</td> 
+    <td><%= sel.name %>&nbsp;&nbsp;&nbsp;</td>  
+    <td><%= sel.points %>&nbsp;&nbsp;&nbsp;</td> 
+    <td><%= sel.bu %></td> 
+  </tr>
+<% end %>                        </table> <br>
+             
+        </div>
+  </div>
+     
+  <div class="expandable-panel" id="cp-3">
+     <div class="expandable-panel-heading">
+         <h2>Country Rankings:<span class="icon-close-open"></span></h2>
+     </div>
+     <div class="expandable-panel-content">
+         <table>                         <br>
+  <tr>           
+    <th>Rank&nbsp;&nbsp;&nbsp;</th>                 
+    <th>Name&nbsp;&nbsp;&nbsp;</th>
+    <th>Points</th>
+  </tr>
+<% @sec.each do |sel| %>     
+  <tr>
+    <td><%= sel.crank %>&nbsp;&nbsp;&nbsp;</td> 
+    <td><%= sel.name %>&nbsp;&nbsp;&nbsp;</td>  
+    <td><%= sel.points %></td>  
+  </tr>
+<% end %>                              </table> <br>
+
+     </div>
+  </div> 
+
+
+
+  <div class="expandable-panel" id="cp-4">
+        <div class="expandable-panel-heading">
+            <h2>Geo Rankings:<span class="icon-close-open"></span></h2>
+         </div>
+        <div class="expandable-panel-content">
+            <table>                         <br>
+  <tr>        
+    <th>Rank&nbsp;&nbsp;&nbsp;</th>                    
+    <th>Name&nbsp;&nbsp;&nbsp;</th>
+    <th>Points</th>
+  </tr>
+<% @seg.each do |sel| %>     
+  <tr>
+    <td><%= sel.grank %>&nbsp;&nbsp;&nbsp;</td> 
+    <td><%= sel.name %>&nbsp;&nbsp;&nbsp;</td>  
+    <td><%= sel.points %></td>  
+  </tr>
+<% end %>                             </table> <br>
+             
+        </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+<% end %>
 
 
     </div>
