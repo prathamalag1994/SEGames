@@ -34,10 +34,10 @@
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to 'Home', 'home'%></li>
-            <li><%= link_to 'My Activities', 'myactivities'%></li>
-            <li><%= link_to 'Leaderboards', 'leader'%></li>
-            <li class="active"><%= link_to 'Offers', 'offer'%></li>
+            <li><a href="http://segamesapp.herokuapp.com/home"> Home </a></li>
+            <li><a href="http://segamesapp.herokuapp.com/myactivities"> My Activities </a></li>
+            <li><a href="http://segamesapp.herokuapp.com/leader"> Leaderboards </a></li>
+            <li   class="active"><a href="http://segamesapp.herokuapp.com/offer"> Offers </a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -46,12 +46,25 @@
     <div class="container">
 
       <div class="starter-template"> 
-
-<h2> Add your offers here: </h2><br>
-
-
-<%= form_for :offer, url: offers_path do |f| %>  <p>
-    <%= f.label :title %><br>
+<h2>Editing Offers</h2>
+ 
+<%= form_for :offer, url: offer_path(@offer), method: :patch do |f| %>
+ 
+  <% if @offer.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@offer.errors.count, "error") %> prohibited
+        this article from being saved:
+      </h2>
+      <ul>
+        <% @offer.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+<%= f.label :title %><br>
     <%= f.text_field :title %>
   </p>
  
@@ -79,8 +92,7 @@
     <%= f.submit %>
   </p>
 <% end %>
-
-
+  
 
     </div>
 
@@ -90,3 +102,4 @@
     <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
   </body>
 </html>
+

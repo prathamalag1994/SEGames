@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -34,10 +33,10 @@
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to 'Home', 'home'%></li>
-            <li><%= link_to 'My Activities', 'myactivities'%></li>
-            <li><%= link_to 'Leaderboards', 'leader'%></li>
-            <li class="active"><%= link_to 'Offers', 'offer'%></li>
+            <li><a href="http://segamesapp.herokuapp.com/home"> Home </a></li>
+            <li><a href="http://segamesapp.herokuapp.com/myactivities"> My Activities </a></li>
+            <li><a href="http://segamesapp.herokuapp.com/leader"> Leaderboards </a></li>
+            <li   class="active"><a href="http://segamesapp.herokuapp.com/offer"> Offers </a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -46,47 +45,30 @@
     <div class="container">
 
       <div class="starter-template"> 
-
-<h2> Add your offers here: </h2><br>
-
-
-<%= form_for :offer, url: offers_path do |f| %>  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
+<h2>Listing Offers:</h2>
+<table>
+  <tr>
+    <th>Title</th>&nbsp;&nbsp;&nbsp;
+    <th>Options</th>
+    <th colspan="3"></th>
+  </tr>
  
-  <p>
-    <%= f.label :description %><br>
-    <%= f.text_area :desc %>
-  </p>
+  <% @offers.each do |offer| %>
+    <tr>
+      <td><%= offer.title %>&nbsp;&nbsp;&nbsp;</td>&nbsp;&nbsp;&nbsp;
+      <td><%= link_to 'Show', offer_path(offer) %></td>&nbsp;&nbsp;&nbsp;
+      <td><%= link_to 'Edit', edit_offer_path(offer) %></td>
 
-  <p>
-    <%= f.label :bu %><br>
-    <%= f.select :bu, [['Core'],['DPAD'],['ASD'],['ETPD'],['Isilon'],['EMSD'],['Global Alliances'],['Global Accounts'],['Flash'],['Other'],['Pivotal']], autocomplete: "off" %>  <br>
-  </p>
-
-  <p>
-    <%= f.label :points %><br>
-    <%= f.number_field :points %>
-  </p>
-
- <%= f.hidden_field :active , :value => "true" %>
-  <p>
-  <%= f.label :activity %><br />
-  <%= f.collection_select :activity, Allact.all, :name, :name, :prompt => "Select an activity" %>
-</p><br>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+    </tr>
+  <% end %>
+</table>
 
 
-
-    </div>
-
+ </div>
 
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
   </body>
 </html>
+

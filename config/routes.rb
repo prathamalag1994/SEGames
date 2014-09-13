@@ -27,6 +27,7 @@ resources :offers
    get 'ses/offer', to: 'activities#new'
    get 'ses/myactivities', to: 'activities#index'
    get 'ses/offer/new', to: 'offers#new'
+   get 'ses/offer/edit', to: 'offers#index'
 
 
    get 'activities/leader', to: 'welcome#leader'
@@ -41,6 +42,7 @@ resources :offers
    get 'offer/myactivities', to: 'activities#index'
 
    get 'offer/new', to: 'offers#new'
+   get 'offer/edit', to: 'offers#index'
 
 
 
@@ -50,6 +52,7 @@ resources :offers
    get 'ses/activities/myactivities', to: 'activities#index'
 
    get 'ses/activities/new', to: 'activities#new'
+
 
    get 'ses/confirmation/leader', to: 'welcome#leader'
    get 'ses/confirmation/offers', to: 'activities#new'
