@@ -16,53 +16,14 @@ resources :offers
   # You can have the root of your site routed with "root"
    root 'welcome#index'
 
-   get 'leader', to: 'welcome#leader'
-   get 'offer', to: 'activities#new'
-   get 'myactivities', to: 'activities#index'
-   get 'home', to: 'welcome#index'
-
-
-   get 'ses/leader', to: 'welcome#leader'
-   get 'ses/home', to: 'welcome#index'
-   get 'ses/offer', to: 'activities#new'
-   get 'ses/myactivities', to: 'activities#index'
-   get 'ses/offer/new', to: 'offers#new'
-   get 'ses/offer/edit', to: 'offers#index'
-
-
-   get 'activities/leader', to: 'welcome#leader'
-   get 'activities/home', to: 'welcome#index'
-   get 'activities/offer', to: 'activities#new'
-   get 'activities/myactivities', to: 'activities#index'
-
-
-   get 'offer/leader', to: 'welcome#leader'
-   get 'offer/home', to: 'welcome#index'
-   get 'offer/offer', to: 'activities#new'
-   get 'offer/myactivities', to: 'activities#index'
+   get '/leader', to: 'welcome#leader'
+   get '/offer', to: 'activities#new'
+   get '/myactivities', to: 'activities#index'
+   get '/home', to: 'welcome#index'
+   get '/add', to: 'activities#indexx'
 
    get 'offer/new', to: 'offers#new'
    get 'offer/edit', to: 'offers#index'
-
-
-
-   get 'ses/activities/leader', to: 'welcome#leader'
-   get 'ses/activities/offer', to: 'activities#new'
-   get 'ses/activities/home', to: 'welcome#index'
-   get 'ses/activities/myactivities', to: 'activities#index'
-
-   get 'ses/activities/new', to: 'activities#new'
-
-
-   get 'ses/confirmation/leader', to: 'welcome#leader'
-   get 'ses/confirmation/offers', to: 'activities#new'
-   get 'ses/confirmation/myactivities', to: 'activities#index'
-   get 'ses/confirmation/home', to: 'welcome#index'
-
-   get 'ses/password/leader', to: 'welcome#leader'
-   get 'ses/password/offers', to: 'activities#new'
-   get 'ses/password/myactivities', to: 'activities#index'
-   get 'ses/password/home', to: 'welcome#index'
 
 
   # Example of regular route:

@@ -34,10 +34,10 @@
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li  class="active"><%= link_to 'Home', 'home'%></li>
-            <li><%= link_to 'My Activities', 'myactivities'%></li>
-            <li><%= link_to 'Leaderboards', 'leader'%></li>
-            <li><%= link_to 'Offers', 'offer'%></li>
+            <li  class="active"><%= link_to 'Home', '/home'%></li>
+            <li><%= link_to 'My Activities', '/myactivities'%></li>
+            <li><%= link_to 'Leaderboards', '/leader'%></li>
+            <li><%= link_to 'Offers', '/offer'%></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -58,6 +58,13 @@
   Your Bu Rank is: <%= @se.burank %> <br>
   Your Geo Rank is: <%= @se.grank %> <br>
   Your Country Rank is: <%= @se.crank %> <br><br><br>
+
+<% if @se.admin == "yes" %>
+
+You are an admin! You can add an offer: <%= link_to 'Add', 'offer/new'%> Or edit existing offers: <%= link_to 'Edit', 'offer/edit'%><br><br>
+
+<% end %>
+
 
   Click here to
   <%= link_to('Logout', destroy_se_session_path, :method => :delete) %>        <br><br>

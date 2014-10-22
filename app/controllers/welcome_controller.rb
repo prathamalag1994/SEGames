@@ -5,9 +5,10 @@ class WelcomeController < ApplicationController
   def leader
   	@se = current_se
   	@sel = Se.order("orank")
-  	@sec = Se.order("crank")
-  	@seb = Se.order("burank")
-  	@seg = Se.order("grank")
+  	@sec = Se.order("country").order("crank")
+  	@seb = Se.order("bu").order("burank")
+  	@seg = Se.order("geo").order("grank")
+    
 
   end
   def offers
