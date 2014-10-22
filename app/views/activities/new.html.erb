@@ -1,0 +1,751 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="starter-template.css" rel="stylesheet">
+
+    <link href="http://prathamalag.com/assets/cssss.css" rel="stylesheet">
+
+    <script src="http://prathamalag.com/assets/javascrs.js"></script>
+
+    <script src="http://getbootstrap.com/assets/js/ie-emulation-modes-warning.js"></script>
+
+    <script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
+  </head>
+
+  <body>
+
+    
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand">EMC SE Games</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><%= link_to 'Home', '/home'%></li>
+            <li><%= link_to 'My Activities', '/myactivities'%></li>
+            <li><%= link_to 'Leaderboards', '/leader'%></li>
+            <li  class="active"><%= link_to 'Offers', '/offer'%></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div><br><br><br>
+
+    <div class="container">
+
+      <div class="starter-template"> 
+
+
+
+<h3>Add a completed achievement in this list of offers:</h3>
+<h4>(No. of offers available for each activity in brackets)</h4>
+ 
+<div id="containerr">
+
+
+    <div class="expandable-panel" id="cp-1">
+        <div class="expandable-panel-heading">
+            <h2>EBC (<%= @no1 %>)<span class="icon-close-open"></span></h2>
+         </div>
+        <div class="expandable-panel-content">
+           
+ 
+  <% @offers.each do |offer| %>
+
+  <% if offer.active %>
+  <% if offer.activity == 'EBC' %>
+
+<p><br><br>
+  <strong>Title:</strong>
+  <%= offer.title %>
+</p>
+ 
+<p>
+  <strong>Description:</strong>
+  <%= link_to 'Expanded list with descriptions', '/add'%>
+</p>
+
+<p>
+  <strong>Offer ID:</strong>
+  <%= offer.id %>
+</p>
+
+<p>
+  <strong>BU:</strong>
+  <%= offer.bu %>
+</p>
+
+<p>
+  <strong>Points:</strong>
+  <%= offer.points %>
+</p>
+
+<p>
+  <strong>Activity:</strong>
+  <%= offer.activity %>
+</p>
+
+
+<%= form_for :activity, url: activities_path do |f| %>  <p>
+    <p><%= f.label :Date_Completed %><br>
+    <%= f.date_field :activity %></p>
+    <p><%= f.label :Account %><br>
+    <%= f.text_field :account %></p>
+  <%= f.hidden_field :desc , :value => offer.title %>
+  <%= f.hidden_field :points , :value => offer.points %>
+  <%= f.hidden_field :offerno , :value => offer.id %>
+
+ 
+      <%= f.submit %>
+<% end %>
+
+  <% end %>
+  <% end %>
+  <% end %><br><br>
+    </div>
+    </div>
+
+    <div class="expandable-panel" id="cp-2">
+        <div class="expandable-panel-heading">
+            <h2>Presentation (<%= @no2 %>)<span class="icon-close-open"></span></h2>
+         </div>
+        <div class="expandable-panel-content">
+                    
+ 
+  <% @offers.each do |offer| %>
+
+  <% if offer.active %>
+  <% if offer.activity == 'Presentation' %>
+
+<p><br><br>
+  <strong>Title:</strong>
+  <%= offer.title %>
+</p>
+ 
+<p>
+  <strong>Description:</strong>
+  <%= link_to 'Expanded list with descriptions', '/add'%>
+</p>
+
+<p>
+  <strong>Offer ID:</strong>
+  <%= offer.id %>
+</p>
+
+<p>
+  <strong>BU:</strong>
+  <%= offer.bu %>
+</p>
+
+<p>
+  <strong>Points:</strong>
+  <%= offer.points %>
+</p>
+
+<p>
+  <strong>Activity:</strong>
+  <%= offer.activity %>
+</p>
+
+
+<%= form_for :activity, url: activities_path do |f| %>  <p>
+    <p><%= f.label :Date_Completed %><br>
+    <%= f.date_field :activity %></p>
+    <p><%= f.label :Account %><br>
+    <%= f.text_field :account %></p>
+  <%= f.hidden_field :desc , :value => offer.title %>
+  <%= f.hidden_field :points , :value => offer.points %>
+  <%= f.hidden_field :offerno , :value => offer.id %>
+
+ 
+ <%= f.submit %>
+<% end %>
+
+  <% end %>
+  <% end %>
+  <% end %><br><br>
+    </div>
+    </div>
+
+    <div class="expandable-panel" id="cp-3">
+        <div class="expandable-panel-heading">
+            <h2>PresoWithDemo (<%= @no3 %>)<span class="icon-close-open"></span></h2>
+         </div>
+        <div class="expandable-panel-content">
+                    
+ 
+  <% @offers.each do |offer| %>
+
+  <% if offer.active %>
+  <% if offer.activity == 'PresoWithDemo' %>
+
+<p><br><br>
+  <strong>Title:</strong>
+  <%= offer.title %>
+</p>
+ 
+<p>
+  <strong>Description:</strong>
+  <%= link_to 'Expanded list with descriptions', '/add'%>
+</p>
+
+<p>
+  <strong>Offer ID:</strong>
+  <%= offer.id %>
+</p>
+
+<p>
+  <strong>BU:</strong>
+  <%= offer.bu %>
+</p>
+
+<p>
+  <strong>Points:</strong>
+  <%= offer.points %>
+</p>
+
+<p>
+  <strong>Activity:</strong>
+  <%= offer.activity %>
+</p>
+
+
+<%= form_for :activity, url: activities_path do |f| %>  <p>
+    <p><%= f.label :Date_Completed %><br>
+    <%= f.date_field :activity %></p>
+    <p><%= f.label :Account %><br>
+    <%= f.text_field :account %></p>
+  <%= f.hidden_field :desc , :value => offer.title %>
+  <%= f.hidden_field :points , :value => offer.points %>
+  <%= f.hidden_field :offerno , :value => offer.id %>
+
+ 
+  <%= f.submit %>
+<% end %>
+
+  <% end %>
+  <% end %>
+  <% end %><br><br>
+    </div>
+    </div>
+
+    <div class="expandable-panel" id="cp-4">
+        <div class="expandable-panel-heading">
+            <h2>Lunch_n_learn (<%= @no4 %>)<span class="icon-close-open"></span></h2>
+         </div>
+        <div class="expandable-panel-content">
+                    
+ 
+  <% @offers.each do |offer| %>
+
+  <% if offer.active %>
+  <% if offer.activity == 'Lunch_n_learn' %>
+
+<p><br><br>
+  <strong>Title:</strong>
+  <%= offer.title %>
+</p>
+ 
+<p>
+  <strong>Description:</strong>
+  <%= link_to 'Expanded list with descriptions', '/add'%>
+</p>
+
+<p>
+  <strong>Offer ID:</strong>
+  <%= offer.id %>
+</p>
+
+<p>
+  <strong>BU:</strong>
+  <%= offer.bu %>
+</p>
+
+<p>
+  <strong>Points:</strong>
+  <%= offer.points %>
+</p>
+
+<p>
+  <strong>Activity:</strong>
+  <%= offer.activity %>
+</p>
+
+
+<%= form_for :activity, url: activities_path do |f| %>  <p>
+    <p><%= f.label :Date_Completed %><br>
+    <%= f.date_field :activity %></p>
+    <p><%= f.label :Account %><br>
+    <%= f.text_field :account %></p>
+  <%= f.hidden_field :desc , :value => offer.title %>
+  <%= f.hidden_field :points , :value => offer.points %>
+  <%= f.hidden_field :offerno , :value => offer.id %>
+
+ <%= f.submit %>
+<% end %>
+
+  <% end %>
+  <% end %>
+  <% end %><br><br>
+    </div>
+    </div>
+
+    <div class="expandable-panel" id="cp-5">
+        <div class="expandable-panel-heading">
+            <h2>PoC (<%= @no5 %>)<span class="icon-close-open"></span></h2>
+         </div>
+        <div class="expandable-panel-content">
+                    
+ 
+  <% @offers.each do |offer| %>
+
+  <% if offer.active %>
+  <% if offer.activity == 'PoC' %>
+
+<p><br><br>
+  <strong>Title:</strong>
+  <%= offer.title %>
+</p>
+ 
+<p>
+  <strong>Description:</strong>
+  <%= link_to 'Expanded list with descriptions', '/add'%>
+</p>
+
+<p>
+  <strong>Offer ID:</strong>
+  <%= offer.id %>
+</p>
+
+<p>
+  <strong>BU:</strong>
+  <%= offer.bu %>
+</p>
+
+<p>
+  <strong>Points:</strong>
+  <%= offer.points %>
+</p>
+
+<p>
+  <strong>Activity:</strong>
+  <%= offer.activity %>
+</p>
+
+
+<%= form_for :activity, url: activities_path do |f| %>  <p>
+    <p><%= f.label :Date_Completed %><br>
+    <%= f.date_field :activity %></p>
+    <p><%= f.label :Account %><br>
+    <%= f.text_field :account %></p>
+  <%= f.hidden_field :desc , :value => offer.title %>
+  <%= f.hidden_field :points , :value => offer.points %>
+  <%= f.hidden_field :offerno , :value => offer.id %>
+
+ <%= f.submit %>
+<% end %>
+
+  <% end %>
+  <% end %>
+  <% end %><br><br>
+    </div>
+    </div>
+
+    <div class="expandable-panel" id="cp-6">
+        <div class="expandable-panel-heading">
+            <h2>Deal  (<%= @no6 %>)<span class="icon-close-open"></span></h2>
+         </div>
+        <div class="expandable-panel-content">
+                    
+ 
+  <% @offers.each do |offer| %>
+
+  <% if offer.active %>
+  <% if offer.activity == 'Deal' %>
+
+<p><br><br>
+  <strong>Title:</strong>
+  <%= offer.title %>
+</p>
+ 
+<p>
+  <strong>Description:</strong>
+  <%= link_to 'Expanded list with descriptions', '/add'%>
+</p>
+
+<p>
+  <strong>Offer ID:</strong>
+  <%= offer.id %>
+</p>
+
+<p>
+  <strong>BU:</strong>
+  <%= offer.bu %>
+</p>
+
+<p>
+  <strong>Points:</strong>
+  <%= offer.points %>
+</p>
+
+<p>
+  <strong>Activity:</strong>
+  <%= offer.activity %>
+</p>
+
+
+<%= form_for :activity, url: activities_path do |f| %>  <p>
+    <p><%= f.label :Date_Completed %><br>
+    <%= f.date_field :activity %></p>
+    <p><%= f.label :Account %><br>
+    <%= f.text_field :account %></p>
+  <%= f.hidden_field :desc , :value => offer.title %>
+  <%= f.hidden_field :points , :value => offer.points %>
+  <%= f.hidden_field :offerno , :value => offer.id %>
+
+ <%= f.submit %>
+<% end %>
+
+  <% end %>
+  <% end %>
+  <% end %><br><br>
+    </div>
+    </div>
+    <div class="expandable-panel" id="cp-7">
+        <div class="expandable-panel-heading">
+            <h2>Reference (<%= @no7 %>)<span class="icon-close-open"></span></h2>
+         </div>
+        <div class="expandable-panel-content">
+                    
+ 
+  <% @offers.each do |offer| %>
+
+  <% if offer.active %>
+  <% if offer.activity == 'Reference' %>
+
+<p><br><br>
+  <strong>Title:</strong>
+  <%= offer.title %>
+</p>
+ 
+<p>
+  <strong>Description:</strong>
+  <%= link_to 'Expanded list with descriptions', '/add'%>
+</p>
+
+<p>
+  <strong>Offer ID:</strong>
+  <%= offer.id %>
+</p>
+
+<p>
+  <strong>BU:</strong>
+  <%= offer.bu %>
+</p>
+
+<p>
+  <strong>Points:</strong>
+  <%= offer.points %>
+</p>
+
+<p>
+  <strong>Activity:</strong>
+  <%= offer.activity %>
+</p>
+
+
+<%= form_for :activity, url: activities_path do |f| %>  <p>
+    <p><%= f.label :Date_Completed %><br>
+    <%= f.date_field :activity %></p>
+    <p><%= f.label :Account %><br>
+    <%= f.text_field :account %></p>
+  <%= f.hidden_field :desc , :value => offer.title %>
+  <%= f.hidden_field :points , :value => offer.points %>
+  <%= f.hidden_field :offerno , :value => offer.id %>
+
+ 
+ <%= f.submit %>
+<% end %>
+
+  <% end %>
+  <% end %>
+  <% end %><br><br>
+    </div>
+    </div>
+    <div class="expandable-panel" id="cp-8">
+        <div class="expandable-panel-heading">
+            <h2>Accreditation (<%= @no8 %>)<span class="icon-close-open"></span></h2>
+         </div>
+        <div class="expandable-panel-content">
+                    
+ 
+  <% @offers.each do |offer| %>
+
+  <% if offer.active %>
+  <% if offer.activity == 'Accreditation' %>
+
+<p><br><br>
+  <strong>Title:</strong>
+  <%= offer.title %>
+</p>
+ 
+<p>
+  <strong>Description:</strong>
+  <%= link_to 'Expanded list with descriptions', '/add'%>
+</p>
+
+<p>
+  <strong>Offer ID:</strong>
+  <%= offer.id %>
+</p>
+
+<p>
+  <strong>BU:</strong>
+  <%= offer.bu %>
+</p>
+
+<p>
+  <strong>Points:</strong>
+  <%= offer.points %>
+</p>
+
+<p>
+  <strong>Activity:</strong>
+  <%= offer.activity %>
+</p>
+
+
+<%= form_for :activity, url: activities_path do |f| %>  <p>
+    <p><%= f.label :Date_Completed %><br>
+    <%= f.date_field :activity %></p>
+    <p><%= f.label :Account %><br>
+    <%= f.text_field :account %></p>
+  <%= f.hidden_field :desc , :value => offer.title %>
+  <%= f.hidden_field :points , :value => offer.points %>
+  <%= f.hidden_field :offerno , :value => offer.id %>
+
+ 
+  <%= f.submit %>
+<% end %>
+
+  <% end %>
+  <% end %>
+  <% end %><br><br>
+    </div>
+    </div>
+    <div class="expandable-panel" id="cp-9">
+        <div class="expandable-panel-heading">
+            <h2>CustomerWorkshop (<%= @no9 %>)<span class="icon-close-open"></span></h2>
+         </div>
+        <div class="expandable-panel-content">
+                    
+ 
+  <% @offers.each do |offer| %>
+
+  <% if offer.active %>
+  <% if offer.activity == 'CustomerWorkshop' %>
+
+<p><br><br>
+  <strong>Title:</strong>
+  <%= offer.title %>
+</p>
+ 
+<p>
+  <strong>Description:</strong>
+  <%= link_to 'Expanded list with descriptions', '/add'%>
+</p>
+
+<p>
+  <strong>Offer ID:</strong>
+  <%= offer.id %>
+</p>
+
+<p>
+  <strong>BU:</strong>
+  <%= offer.bu %>
+</p>
+
+<p>
+  <strong>Points:</strong>
+  <%= offer.points %>
+</p>
+
+<p>
+  <strong>Activity:</strong>
+  <%= offer.activity %>
+</p>
+
+
+<%= form_for :activity, url: activities_path do |f| %>  <p>
+    <p><%= f.label :Date_Completed %><br>
+    <%= f.date_field :activity %></p>
+    <p><%= f.label :Account %><br>
+    <%= f.text_field :account %></p>
+  <%= f.hidden_field :desc , :value => offer.title %>
+  <%= f.hidden_field :points , :value => offer.points %>
+  <%= f.hidden_field :offerno , :value => offer.id %>
+
+ <%= f.submit %>
+<% end %>
+
+  <% end %>
+  <% end %>
+  <% end %><br><br>
+    </div>
+    </div>
+
+    <div class="expandable-panel" id="cp-10">
+        <div class="expandable-panel-heading">
+            <h2>InternalWorkshop (<%= @no10 %>)<span class="icon-close-open"></span></h2>
+         </div>
+        <div class="expandable-panel-content">
+                    
+ 
+  <% @offers.each do |offer| %>
+
+  <% if offer.active %>
+  <% if offer.activity == 'InternalWorkshop' %>
+
+<p><br><br>
+  <strong>Title:</strong>
+  <%= offer.title %>
+</p>
+ 
+<p>
+  <strong>Description:</strong>
+  <%= link_to 'Expanded list with descriptions', '/add'%>
+</p>
+
+<p>
+  <strong>Offer ID:</strong>
+  <%= offer.id %>
+</p>
+
+<p>
+  <strong>BU:</strong>
+  <%= offer.bu %>
+</p>
+
+<p>
+  <strong>Points:</strong>
+  <%= offer.points %>
+</p>
+
+<p>
+  <strong>Activity:</strong>
+  <%= offer.activity %>
+</p>
+
+
+<%= form_for :activity, url: activities_path do |f| %>  <p>
+    <p><%= f.label :Date_Completed %><br>
+    <%= f.date_field :activity %></p>
+    <p><%= f.label :Account %><br>
+    <%= f.text_field :account %></p>
+  <%= f.hidden_field :desc , :value => offer.title %>
+  <%= f.hidden_field :points , :value => offer.points %>
+  <%= f.hidden_field :offerno , :value => offer.id %>
+
+ <%= f.submit %>
+<% end %>
+
+  <% end %>
+  <% end %>
+  <% end %><br><br>
+    </div>
+    </div>
+
+    <div class="expandable-panel" id="cp-11">
+        <div class="expandable-panel-heading">
+            <h2>Other (<%= @no11 %>)<span class="icon-close-open"></span></h2>
+         </div>
+        <div class="expandable-panel-content">
+                    
+ 
+  <% @offers.each do |offer| %>
+
+  <% if offer.active %>
+  <% if offer.activity == 'Other' %>
+
+<p><br><br>
+  <strong>Title:</strong>
+  <%= offer.title %>
+</p>
+ 
+<p>
+  <strong>Description:</strong>
+  <%= link_to 'Expanded list with descriptions', '/add'%>
+</p>
+
+<p>
+  <strong>Offer ID:</strong>
+  <%= offer.id %>
+</p>
+
+<p>
+  <strong>BU:</strong>
+  <%= offer.bu %>
+</p>
+
+<p>
+  <strong>Points:</strong>
+  <%= offer.points %>
+</p>
+
+<p>
+  <strong>Activity:</strong>
+  <%= offer.activity %>
+</p>
+
+
+<%= form_for :activity, url: activities_path do |f| %>  <p>
+    <p><%= f.label :Date_Completed %><br>
+    <%= f.date_field :activity %></p>
+    <p><%= f.label :Account %><br>
+    <%= f.text_field :account %></p>
+  <%= f.hidden_field :desc , :value => offer.title %>
+  <%= f.hidden_field :points , :value => offer.points %>
+  <%= f.hidden_field :offerno , :value => offer.id %>
+
+ 
+  <%= f.submit %>
+<% end %>
+
+  <% end %>
+  <% end %>
+  <% end %><br><br>
+    </div>
+    </div>
+
+
+     
+
+</div>
+
+
+
+
+    </div>
+
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
