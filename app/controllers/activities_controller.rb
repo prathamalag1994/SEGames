@@ -1,6 +1,6 @@
 class ActivitiesController < ApplicationController
 def new
-	@offers = Offers.all
+	  @offers = Offers.all
     @no1 = Offers.where(activity: 'EBC').count;
     @no2 = Offers.where(activity: 'Presentation').count;
     @no3 = Offers.where(activity: 'PresoWithDemo').count;
