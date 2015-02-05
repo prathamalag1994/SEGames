@@ -52,6 +52,9 @@ def create
   	@ses.each do |lala|
   		lala.grank = Se.where(geo: current_se.geo).order("points DESC").index(lala) + 1
   		lala.save
+
+
+
   	end
 
   	@ses = Se.where(country: current_se.country)
